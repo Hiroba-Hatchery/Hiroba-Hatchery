@@ -3,12 +3,12 @@ import './SignupForm.css';
 
 function SignupForm() {
   // sign up fetch
-  const handleSignup = () => {
+  const handleSignup = async () => {
     console.log('handle signup function clicked');
   };
 
   // login fetch
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log('handle login function clicked');
   };
 
