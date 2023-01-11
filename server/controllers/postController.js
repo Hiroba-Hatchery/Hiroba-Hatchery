@@ -2,26 +2,48 @@
 
 const postController = {};
 
-postController.newPost = async (req, res, next) => {
-  try {
-    const { _id, uid, content, url, likes, comments } = req.body;
+// postController.newPost = async (req, res, next) => {
+//   try {
+//     const { _id, uid, content, url, likes, comments } = req.body;
 
-    const insertCommand = `INSERT INTO post (_id, uid, content, url, likes, comments) VALUES (${_id}, ${uid}, ${content}, ${url}, ${likes}, ARRAY[${comments}])`;         
+//     const insertCommand = `INSERT INTO post (_id, uid, content, url, likes, comments) VALUES (${_id}, ${uid}, ${content}, ${url}, ${likes}, ARRAY[${comments}])`;         
 
-    // ARRAY[‘Item 1’, ‘Item 2’, ‘Item 3’]
-    console.log(insertCommand);
+//     // ARRAY[‘Item 1’, ‘Item 2’, ‘Item 3’]
+//     console.log(insertCommand);
 
-    const results = await db.query(insertCommand);
+//     const results = await db.query(insertCommand);
     
-    res.locals.results = results;
-    return next();
+//     res.locals.results = results;
+//     return next();
 
+//   } catch (err) {
+//     return next(
+//       {
+//         log: 'Express error handler caught a middleware error in newPost',
+//         status: 500,
+//         message: { err: 'An error occurred in newPost' }
+//       }
+//     )
+//   }
+// }
+
+postController.newPost = async (req, res, next) => {
+  try{
+    const { uid, post_id, content, url, likes, comments } = req.body;
+
+    const text = `INSERT INTO post (uid, post_id, content, url, likes, comments) VALUES ($1, $2, $3, $4, $5, ARRAY[$6])`;
+    const values = [uid, post_id, content, url, likes, comments];
+
+    const results = await db.query(text, values);
+    res.locals.results = results.rows[0];
+    return next();
+    
   } catch (err) {
     return next(
       {
         log: 'Express error handler caught a middleware error in newPost',
         status: 500,
-        message: { err: 'An error occurred in newPost' }
+        message: { err: 'An error occured in newPost' }
       }
     )
   }
@@ -34,6 +56,7 @@ postController.getPost = async (req, res, next) => {
     // console.log(results.rows[0]);
     res.locals.results = results.rows[0];
     console.log(res.locals.results);
+    return next();
   } catch (err) {
     return next(
       {
@@ -45,33 +68,46 @@ postController.getPost = async (req, res, next) => {
   }
 }
 
-// async editPost(req, res, next) {
-//   try {
+postController.editPost = async (req, res, next) => {
+  try {
+    const id = parseInt(req.params._id);
+    const { _id, uid, content, url, likes, comments } = req.body;
 
-//   } catch {
-//     return next(
-//       {
-//         log: 'Express error handler caught a middleware error in newPost',
-//         status: 500,
-//         message: { err: 'An error occurred in newPost' }
-//       }
-//     )
-//   }
-// },
+    const text = `UPDATE post SET `;
+    const values = '';
 
-// async deletePost(req, res, next) {
-//   try {
+    const results = await db.query()
 
-//   } catch {
-//     return next(
-//       {
-//         log: 'Express error handler caught a middleware error in newPost',
-//         status: 500,
-//         message: { err: 'An error occurred in newPost' }
-//       }
-//     )
-//   }
-// }
+    return next();
+  } catch {
+    return next(
+      {
+        log: 'Express error handler caught a middleware error in newPost',
+        status: 500,
+        message: { err: 'An error occurred in newPost' }
+      }
+      )
+    }
+  },
+  
+  postController.deletePost = async (req, res, next) => {
+  try {
+    const { post_id } = req.params;
+    const text = `DELETE FROM post WHERE post_id = $1`;
+    const values = [post_id];
+    const results = await db.query(text, values);
+    res.locals.results = results;
+    return next();
+  } catch {
+    return next(
+      {
+        log: 'Express error handler caught a middleware error in newPost',
+        status: 500,
+        message: { err: 'An error occurred in newPost' }
+      }
+    )
+  }
+}
 module.exports = postController;
 
   // async addToCart(req, res, next) {

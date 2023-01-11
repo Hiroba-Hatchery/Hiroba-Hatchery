@@ -20,7 +20,7 @@ const router = express.Router();
 // });
 
 router.post('/post', postController.newPost, (req, res) => {
-  return res.status(200).json(res.locals.results);
+  return res.status(200).send(res.locals.results);
 });
 
 router.get('/feed', postController.getPost, (req, res) => {
@@ -31,9 +31,9 @@ router.get('/feed', postController.getPost, (req, res) => {
 //   return res.status(200).json(req.params.post_id);
 // });
 
-// router.delete('/:post_id', postController.deletePost, (req, res) => {
-//   return res.status(200).json(req.params.post_id);
-// });
+router.delete('/:post_id', postController.deletePost, (req, res) => {
+  return res.status(200).json(req.params.post_id);
+});
 
 module.exports = router;
 
