@@ -7,17 +7,17 @@ const router = express.Router();
 
 // REQUIRE CONTROLLERS
 
-router.post('/signup', authController.signUp, (req, res) => {
-  return res.status(200).json(res.locals.results);
-});
+// router.post('/signup', authController.signUp, (req, res) => {
+//   return res.status(200).json(res.locals.results);
+// });
 
-router.post('/signin', authController.signIn, (req, res) => {
-  return res.status(200).json(res.locals.results);
-});
+// router.post('/signin', authController.signIn, (req, res) => {
+//   return res.status(200).json(res.locals.results);
+// });
 
-router.post('/verify', authController.verifyUser, (req, res) => {
-  return res.status(200).json(res.locals.results);
-});
+// router.post('/verify', authController.verifyUser, (req, res) => {
+//   return res.status(200).json(res.locals.results);
+// });
 
 router.post('/post', postController.newPost, (req, res) => {
   return res.status(200).json(res.locals.results);
@@ -27,13 +27,13 @@ router.get('/feed', postController.getPost, (req, res) => {
   return res.status(200).json(res.locals.results);
 });
 
-router.put('/:post_id', postController.editPost, (req, res) => {
-  return res.status(200).json(req.params.post_id);
-});
+// router.put('/:post_id', postController.editPost, (req, res) => {
+//   return res.status(200).json(req.params.post_id);
+// });
 
-router.delete('/:post_id', postController.deletePost, (req, res) => {
-  return res.status(200).json(req.params.post_id);
-});
+// router.delete('/:post_id', postController.deletePost, (req, res) => {
+//   return res.status(200).json(req.params.post_id);
+// });
 
 module.exports = router;
 
