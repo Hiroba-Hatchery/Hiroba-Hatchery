@@ -7,9 +7,9 @@ const router = express.Router();
 
 // REQUIRE CONTROLLERS
 
-// router.post('/signup', authController.signUp, (req, res) => {
-//   return res.status(200).json(res.locals.results);
-// });
+router.post('/signup', authController.signUp, (req, res) => {
+  return res.status(200).json(res.locals.results);
+});
 
 // router.post('/signin', authController.signIn, (req, res) => {
 //   return res.status(200).json(res.locals.results);
@@ -23,8 +23,12 @@ router.post('/post', postController.newPost, (req, res) => {
   return res.status(200).send(res.locals.results);
 });
 
-router.get('/feed', postController.getPost, (req, res) => {
+router.get('/feed', postController.getAllPost, (req, res) => {
   return res.status(200).json(res.locals.results);
+});
+
+router.get('/:username', postController.getUserPost, (req, res) => {
+  return res.status(200).json(req.params.username);
 });
 
 router.put('/:post_id', postController.editPost, (req, res) => {
@@ -34,6 +38,8 @@ router.put('/:post_id', postController.editPost, (req, res) => {
 router.delete('/:post_id', postController.deletePost, (req, res) => {
   return res.status(200).json(req.params.post_id);
 });
+
+router.put('/:')
 
 module.exports = router;
 
