@@ -70,16 +70,24 @@ postController.getPost = async (req, res, next) => {
 
 postController.editPost = async (req, res, next) => {
   try {
-    const id = parseInt(req.params._id);
-    const { _id, uid, content, url, likes, comments } = req.body;
+    // CAN WE WRITE IT SO WE CAN UPDATE JUST CONTENT OR JUST URL OR BOTH
 
-    const text = `UPDATE post SET `;
-    const values = '';
+    // console.log('In editPost');
 
-    const results = await db.query()
+    const { post_id } = req.params
+    const { content, url } = req.body;
+
+    const text = `UPDATE post SET content = $1, url = $2 WHERE post_id = $3`;
+    const values = [content, url, post_id];
+
+    const results = await db.query(text, values)
+    
+    // console.log('Results ', results);
+
+    res.locals.results = results;
 
     return next();
-  } catch {
+  } catch (err) {
     return next(
       {
         log: 'Express error handler caught a middleware error in newPost',
