@@ -1,6 +1,7 @@
 # Hiroba-Hatchery
 
 A platform for new engineers to share their projects and receive feedback!
+It is a work in progress application. Thank you for your support!
 
 ![main-logo](https://github.com/Hiroba-Hatchery/Hiroba-Hatchery/raw/dev/media/Main-logo.png)
 
