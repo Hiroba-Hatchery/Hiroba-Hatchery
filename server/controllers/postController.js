@@ -9,12 +9,12 @@ postController.newPost = async (req, res, next) => {
     const text = `INSERT INTO post (post_id, uid, content, url) VALUES ($1, $2, $3, $4)`;
     const values = [post_id, uid, content, url];
     
-    // console.log('text: ', text);
-    // console.log('values: ', values);
+    console.log('text: ', text);
+    console.log('values: ', values);
 
     const results = await db.query(text, values);
-    // console.log('Results: ', results);
-    res.locals.results = results.rows[0];
+    console.log('Results: ', results);
+    res.locals.results = results.rows;
     return next();
     
   } catch (err) {

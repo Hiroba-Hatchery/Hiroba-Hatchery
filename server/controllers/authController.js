@@ -26,4 +26,13 @@ authController.signUp = async (req, res, next) => {
   }
 }
 
+
+authController.getUser = async (req, res, next) => {
+  try {
+
+  }
+  catch (err) {
+
+  }
+}
 module.exports = authController;
