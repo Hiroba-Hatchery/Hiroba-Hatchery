@@ -1,38 +1,13 @@
-  const db = require('../db.js');
+const db = require('../db.js');
 
 const postController = {};
 
-// postController.newPost = async (req, res, next) => {
-//   try {
-//     const { _id, uid, content, url, likes, comments } = req.body;
-
-//     const insertCommand = `INSERT INTO post (_id, uid, content, url, likes, comments) VALUES (${_id}, ${uid}, ${content}, ${url}, ${likes}, ARRAY[${comments}])`;         
-
-//     // ARRAY[‘Item 1’, ‘Item 2’, ‘Item 3’]
-//     console.log(insertCommand);
-
-//     const results = await db.query(insertCommand);
-    
-//     res.locals.results = results;
-//     return next();
-
-//   } catch (err) {
-//     return next(
-//       {
-//         log: 'Express error handler caught a middleware error in newPost',
-//         status: 500,
-//         message: { err: 'An error occurred in newPost' }
-//       }
-//     )
-//   }
-// }
-
 postController.newPost = async (req, res, next) => {
   try{
-    const { uid, post_id, content, url, likes, comments } = req.body;
-
-    const text = `INSERT INTO post (uid, post_id, content, url, likes, comments) VALUES ($1, $2, $3, $4, $5, ARRAY[$6])`;
-    const values = [uid, post_id, content, url, likes, comments];
+    const { uid, post_id, content, url } = req.body;
+  
+    const text = `INSERT INTO post (uid, post_id, content, url) VALUES ($1, $2, $3, $4)`;
+    const values = [uid, post_id, content, url];
 
     const results = await db.query(text, values);
     res.locals.results = results.rows[0];
@@ -70,22 +45,14 @@ postController.getPost = async (req, res, next) => {
 
 postController.editPost = async (req, res, next) => {
   try {
-    // CAN WE WRITE IT SO WE CAN UPDATE JUST CONTENT OR JUST URL OR BOTH
-
-    // console.log('In editPost');
-
     const { post_id } = req.params
     const { content, url } = req.body;
 
     const text = `UPDATE post SET content = $1, url = $2 WHERE post_id = $3`;
     const values = [content, url, post_id];
-
-    const results = await db.query(text, values)
     
-    // console.log('Results ', results);
-
+    const results = await db.query(text, values)
     res.locals.results = results;
-
     return next();
   } catch (err) {
     return next(
@@ -116,22 +83,23 @@ postController.editPost = async (req, res, next) => {
     )
   }
 }
-module.exports = postController;
 
-  // async addToCart(req, res, next) {
-  //   try {
-  //     const insertCommand = 'INSERT INTO ORDER_ITEM (_id, product_id, quantity) VALUES (' +
-  //      req.body._id + ', ' + req.body.product_id + ', 1)';
-  //     const addedRes = await db.query(insertCommand);
-  //     res.locals.addedRes = addedRes;
-  //     return next();
-  //   } catch {
-  //     return next(
-  //       {
-  //         log: 'Express error handler caught a middleware error in addToCart',
-  //         status: 500,
-  //         message: { err: 'An error occurred in addToCart' }
-  //       }
-  //     );
-  //   }
-  // }
+postController.likePost = async (req, res, next) => {
+  try{
+    const { post_id } = req.params;
+    const { likes } = req.body
+
+    const text = `UPDATE `
+  } catch (err) {
+    return next(
+      {
+        log: 'Express error handler caught a middleware error in likePost',
+        status: 500,
+        message: { err: 'An error occurred in likePost' }
+      }
+    )
+  }
+}
+
+
+module.exports = postController;
