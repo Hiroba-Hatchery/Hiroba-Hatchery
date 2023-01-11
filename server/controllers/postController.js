@@ -83,7 +83,7 @@ postController.editPost = async (req, res, next) => {
     )
   }
 }
-
+ 
 postController.likePost = async (req, res, next) => {
   try{
     const { post_id } = req.params;
