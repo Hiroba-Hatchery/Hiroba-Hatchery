@@ -4,12 +4,16 @@ const postController = {};
 
 postController.newPost = async (req, res, next) => {
   try{
-    const { uid, post_id, content, url } = req.body;
+    const { post_id, uid, content, url } = req.body;
   
-    const text = `INSERT INTO post (uid, post_id, content, url) VALUES ($1, $2, $3, $4)`;
-    const values = [uid, post_id, content, url];
+    const text = `INSERT INTO post (post_id, uid, content, url) VALUES ($1, $2, $3, $4)`;
+    const values = [post_id, uid, content, url];
+    
+    // console.log('text: ', text);
+    // console.log('values: ', values);
 
     const results = await db.query(text, values);
+    // console.log('Results: ', results);
     res.locals.results = results.rows[0];
     return next();
     
@@ -24,18 +28,40 @@ postController.newPost = async (req, res, next) => {
   }
 }
 
-postController.getPost = async (req, res, next) => {
+postController.getAllPost = async (req, res, next) => {
   try {
-    const getAllQuery = 'SELECT users.username, post.content, post.url, post.likes, post.comments FROM post INNER JOIN users ON post.uid = users.username';
+    const getAllQuery = 'SELECT * FROM post';
     const results = await db.query(getAllQuery);
     // console.log(results.rows[0]);
     res.locals.results = results.rows[0];
-    console.log(res.locals.results);
+    // console.log(res.locals.results);
     return next();
   } catch (err) {
     return next(
       {
-        log: 'Express error handler caught a middleware error in getPost',
+        log: 'Express error handler caught a middleware error in getAllPost',
+        status: 500,
+        message: { err: 'An error occurred in getPost' }
+      }
+    )
+  }
+}
+
+postController.getUserPost = async (req, res, next) => {
+  try {
+    const { username } = req.params; 
+    const text = `SELECT users.$1, post.content, post.url, post.likes, post.comments FROM post INNER JOIN users ON post.uid = users.$1`;
+    const values = [username];
+
+    const results = await db.query(text, values);
+    // console.log(results.rows[0]);
+    res.locals.results = results.rows[0];
+    // console.log(res.locals.results);
+    return next();
+  } catch (err) {
+    return next(
+      {
+        log: 'Express error handler caught a middleware error in getUserPost',
         status: 500,
         message: { err: 'An error occurred in getPost' }
       }
@@ -57,9 +83,9 @@ postController.editPost = async (req, res, next) => {
   } catch (err) {
     return next(
       {
-        log: 'Express error handler caught a middleware error in newPost',
+        log: 'Express error handler caught a middleware error in editPost',
         status: 500,
-        message: { err: 'An error occurred in newPost' }
+        message: { err: 'An error occurred in editPost' }
       }
       )
     }
@@ -76,9 +102,9 @@ postController.editPost = async (req, res, next) => {
   } catch {
     return next(
       {
-        log: 'Express error handler caught a middleware error in newPost',
+        log: 'Express error handler caught a middleware error in deletePost',
         status: 500,
-        message: { err: 'An error occurred in newPost' }
+        message: { err: 'An error occurred in deletePost' }
       }
     )
   }
@@ -87,9 +113,15 @@ postController.editPost = async (req, res, next) => {
 postController.likePost = async (req, res, next) => {
   try{
     const { post_id } = req.params;
-    const { likes } = req.body
+    const { likes } = req.body;
 
-    const text = `UPDATE `
+    const text = `UPDATE post SET likes = $2 WHERE post_id = $1`
+    const values = [post_id, likes]
+    
+    const results = await db.query(text, values);
+    res.locals.results = results;
+    
+    return next();
   } catch (err) {
     return next(
       {
@@ -101,5 +133,27 @@ postController.likePost = async (req, res, next) => {
   }
 }
 
+postController.addComment = async (req, res, next) => {
+  try {
+    const { post_id } = req.params;
+    const { newComment } = req.body;
+
+    const text = `UPDATE post SET comments = array_append(comments, $2) WHERE post_id = $1`;
+    const values = [post_id, newComment];
+
+    const results = await db.query(text, values);
+    res.locals.results = results;
+
+    return next();
+  } catch (err) {
+    return next(
+      {
+        log: 'Express error handler caught a middleware error in addComment',
+        status: 500,
+        message: { err: 'An error occurred in addComment' }
+      }
+    )
+  }
+}
 
 module.exports = postController;
