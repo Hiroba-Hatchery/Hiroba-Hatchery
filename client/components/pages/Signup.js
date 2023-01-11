@@ -5,8 +5,11 @@ import SignupForm from '../SignupForm';
 function Signup() {
   return (
     <>
-      {/* <h1 className='sign-up'>Sign Up</h1> */}
-      <img src='https://github.com/Hiroba-Hatchery/Hiroba-Hatchery/raw/dev/media/Main-logo.png' />
+      <img
+        src='https://github.com/Hiroba-Hatchery/Hiroba-Hatchery/raw/dev/media/Main-logo.png'
+        className='signup-image'
+        alt='hiroba hatchery main logo: baby chick'
+      />
       <SignupForm />
     </>
   );
