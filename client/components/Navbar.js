@@ -29,14 +29,13 @@ function navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Hiroba Hatchery{' '}
-            {/* <img
-              src='../images/logo.png'
-              className='navbar-logo'
-              onClick={closeMobileMenu}
-            /> */}
-            {/* <i class='fa-solid fa-egg'></i> */}
-            <img src='../images/logo.png'></img>
+            Hiroba Hatchery
+            <img
+              src='https://github.com/Hiroba-Hatchery/Hiroba-Hatchery/raw/dev/media/pink.png'
+              width='35px'
+              height='35px'
+              padding='10px'
+            ></img>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'font types' : 'other font types'}></i>

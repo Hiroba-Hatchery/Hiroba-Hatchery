@@ -11,50 +11,104 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='https://github.com/oslabs-beta/Ponder/raw/main/assets/small-ponder.png'
-              text='The Ponder logo, which depicts Deno looking at two databases'
-              label='Adventure'
+              text='Ponder'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/obsidianLogo.webp'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/open-source-labs/obsidian/raw/master/assets/logoSilver.jpg'
+              text='Obsidian'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/img-2.jpg'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/open-source-labs/Svelvet/raw/main/src/assets/banner.png'
+              text='Svelvet'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/img-2.jpg'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/open-source-labs/Chronos/raw/master/app/assets/Chronos-Demo-poster.png'
+              text='Chronos'
+              label='OS Labs'
+              path='/services'
+            />
+          </ul>
+          <ul className='cards__items'>
+            <CardItem
+              src='https://github.com/oslabs-beta/RediScope/raw/main/src/components/images/RediScope%203.png'
+              text='RediScope'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/img-2.jpg'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/oslabs-beta/ZusTime/raw/main/src/zustime_banner.png'
+              text='ZusTime'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/img-2.jpg'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/oslabs-beta/Hearth/raw/main/src/logo.png'
+              text='Hearth'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/img-2.jpg'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/open-source-labs/reactime/raw/master/assets/readme-logo-300-no-version.png'
+              text='Reactime'
+              label='OS Labs'
+              path='/services'
+            />
+          </ul>
+          <ul className='cards__items'>
+            <CardItem
+              src='https://github.com/oslabs-beta/Ponder/raw/main/assets/small-ponder.png'
+              text='Ponder'
+              label='OS Labs'
               path='/services'
             />
             <CardItem
-              src='../images/img-2.jpg'
-              text='From__image__2'
-              label='Adventure'
+              src='https://github.com/open-source-labs/obsidian/raw/master/assets/logoSilver.jpg'
+              text='Obsidian'
+              label='OS Labs'
+              path='/services'
+            />
+            <CardItem
+              src='https://github.com/open-source-labs/Svelvet/raw/main/src/assets/banner.png'
+              text='Svelvet'
+              label='OS Labs'
+              path='/services'
+            />
+            <CardItem
+              src='https://github.com/open-source-labs/Chronos/raw/master/app/assets/Chronos-Demo-poster.png'
+              text='Chronos'
+              label='OS Labs'
+              path='/services'
+            />
+          </ul>
+          <ul className='cards__items'>
+            <CardItem
+              src='https://github.com/oslabs-beta/RediScope/raw/main/src/components/images/RediScope%203.png'
+              text='RediScope'
+              label='OS Labs'
+              path='/services'
+            />
+            <CardItem
+              src='https://github.com/oslabs-beta/ZusTime/raw/main/src/zustime_banner.png'
+              text='ZusTime'
+              label='OS Labs'
+              path='/services'
+            />
+            <CardItem
+              src='https://github.com/oslabs-beta/Hearth/raw/main/src/logo.png'
+              text='Hearth'
+              label='OS Labs'
+              path='/services'
+            />
+            <CardItem
+              src='https://github.com/open-source-labs/reactime/raw/master/assets/readme-logo-300-no-version.png'
+              text='Reactime'
+              label='OS Labs'
               path='/services'
             />
           </ul>

@@ -22,6 +22,7 @@
   color: #fff;
   justify-self: start;
   margin-left: 20px;
+  gap: 15px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -75,7 +76,7 @@
   display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
   .NavbarItems {
     position: relative;
   }
