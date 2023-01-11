@@ -68,7 +68,7 @@ function footer() {
               Hiroba Hatchery
             </Link>
           </div>
-          <small class='website-rights'>Hiroba Hatchery © 2020</small>
+          <small class='website-rights'>Hiroba Hatchery © 2023</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
