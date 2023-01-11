@@ -5,13 +5,17 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 50vh;
+  width: 22em;
 }
 
 .user-input {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 20em;
 }
 .username-input {
   display: flex;

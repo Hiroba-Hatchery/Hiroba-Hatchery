@@ -90,7 +90,15 @@ h1 {
 }
 
 .cards__item__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px 30px 30px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .cards__item__text {

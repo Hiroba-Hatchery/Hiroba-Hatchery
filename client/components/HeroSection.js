@@ -13,7 +13,6 @@ function HeroSection() {
         muted
       />
       <h1>Hatching Your Ideas Starts Here</h1>
-      <p>What are you waiting for</p>
       <div className='hero-btns'>
         <Button
           className='btns'
@@ -21,14 +20,6 @@ function HeroSection() {
           buttonSize='btn--large'
         >
           Get started
-        </Button>
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-        >
-          watch trailer
-          <i className='far fa-play-circle' />
         </Button>
       </div>
     </div>

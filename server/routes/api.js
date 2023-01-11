@@ -1,7 +1,7 @@
 const express = require('express');
 
-const authController = require('../controllers/authController.js')
-const postController = require('../controllers/postController.js')
+const authController = require('../controllers/authController.js');
+const postController = require('../controllers/postController.js');
 
 const router = express.Router();
 
@@ -39,7 +39,7 @@ router.delete('/:post_id', postController.deletePost, (req, res) => {
   return res.status(200).json(req.params.post_id);
 });
 
-router.put('/:')
+router.put('/:');
 
 module.exports = router;
 
