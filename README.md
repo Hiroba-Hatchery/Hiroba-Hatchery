@@ -2,7 +2,7 @@
 
 A platform for new engineers to share their projects and receive feedback!
 
-![main-logo](https://github.com/cheesehero112/Places-You-ll-Go/raw/main/media/Places-Screenshot1.png)
+![main-logo](https://github.com/Hiroba-Hatchery/Hiroba-Hatchery/raw/dev/media/Main-logo.png)
 
 ### Features
 
@@ -13,8 +13,8 @@ A platform for new engineers to share their projects and receive feedback!
 
 ### Hiroba-Hatchery Team
 
-Stella Baek // <seungyeon1008@gmail.com> // https://www.linkedin.com/in/stellabaek/
-Sara Brown // <sara.brown07.sb@gmail.com> // https://www.linkedin.com/in/sara-brown15
-Timmy Lem // <timmyxlem@gmail.com> // https://github.com/timmylem01
-Andy Oh // <andyoh.94@gmail.com> // https://www.linkedin.com/in/andyseihyunoh/
-Chihiro Snider // <chihirosnider@gmail.com> // https://www.linkedin.com/in/chihiro-snider/
+- Stella Baek // <seungyeon1008@gmail.com> // https://www.linkedin.com/in/stellabaek/
+- Sara Brown // <sara.brown07.sb@gmail.com> // https://www.linkedin.com/in/sara-brown15
+- Timmy Lem // <timmyxlem@gmail.com> // https://github.com/timmylem01
+- Andy Oh // <andyoh.94@gmail.com> // https://www.linkedin.com/in/andyseihyunoh/
+- Chihiro Snider // <chihirosnider@gmail.com> // https://www.linkedin.com/in/chihiro-snider/

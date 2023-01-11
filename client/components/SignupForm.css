@@ -1,0 +1,73 @@
+.sign-up-form {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50vh;
+}
+
+.user-input {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.username-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  padding: 6px 20px;
+  border: none;
+  border-bottom: 2px solid pink;
+}
+.password-input {
+  width: 200px;
+  padding: 6px 20px;
+  border: none;
+  border-bottom: 2px solid pink;
+}
+
+.signup-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-btn,
+.login-btn {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 10px;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.signup-btn:hover,
+.login-btn:hover {
+  border-color: rgba(244, 97, 222, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(244, 11, 228);
+  transform: translateY(-1px);
+}
