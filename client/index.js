@@ -10,11 +10,11 @@ const mountNode = document.getElementById('root');
 const root = createRoot(mountNode);
 
 root.render(
-    // <Provider store={store}>
+    <Provider store={store}>
     <React.StrictMode>
-        <BrowserRouter>
+       <BrowserRouter>
             <App />
         </BrowserRouter>
     </React.StrictMode>
-    // {/* </Provider> */}
+    </Provider>
 )
