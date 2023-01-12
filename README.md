@@ -12,6 +12,12 @@ It is a work in progress application. Thank you for your support!
 - User can edit or delete posts by pressing the delete button on each card
 - All user can view all the posts in the feed
 
+### How to Use
+
+- ```git clone <this repo's URL> ```
+- ```npm i```
+- ```npm run dev:all```
+
 ### Hiroba-Hatchery Team
 
 - Stella Baek // <seungyeon1008@gmail.com> // https://www.linkedin.com/in/stellabaek/
