@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import Form from '../Form.js';
 import Post from '../Post';
+import Cards from '../Cards';
 
 //we'll add looping logical here to get all the posts in our db
 // Logic to fetch all posts from DB and create individual post goes here
@@ -14,7 +15,7 @@ function Feed() {
   return (
     <>
       <Form />
-      <Post />
+      <Cards />
     </>
   );
 }

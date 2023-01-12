@@ -1,15 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignupForm.css';
 
 function SignupForm() {
+  const navigate = useNavigate();
   // sign up fetch
-  const handleSignup = async () => {
+  const handleSignup = () => {
     console.log('handle signup function clicked');
+    navigate('/feed');
   };
 
   // login fetch
-  const handleLogin = async () => {
+  const handleLogin = () => {
     console.log('handle login function clicked');
+    navigate('/feed');
   };
 
   return (
@@ -18,7 +22,7 @@ function SignupForm() {
         <label htmlFor='username'>Username:</label>
         <input className='username-input'></input>
         <label htmlFor='password'>Password:</label>
-        <input className='password-input'></input>
+        <input className='password-input' type='password'></input>
       </form>
       <div className='signup-btns'>
         <button className='signup-btn' onClick={handleSignup}>

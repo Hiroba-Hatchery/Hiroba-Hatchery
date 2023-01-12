@@ -48,11 +48,11 @@ function navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/*******link with backend'
+                to='/sign-up'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Signup/Login
+                Login
               </Link>
             </li>
           </ul>
