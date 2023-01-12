@@ -64,6 +64,7 @@ function Form() {
   return (
     <section className='form-section'>
       <div className='post-form'>
+        <h1 className='form-title'>Submit A New Project!</h1>
         <form className='feed-input'>
           <label htmlFor='userName'>Name:</label>
           <input className='content' onChange={handleName}></input>
